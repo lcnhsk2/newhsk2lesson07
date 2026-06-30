@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>HSK 2 Bab 7 - Flashcard & Kuis Interaktif (120 Kosakata)</title>
+    <title>HSK 2 Bab 07 – 他篮球打得很好 | Flashcard & Kuis</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #8b5cf6 100%);
+            background: linear-gradient(135deg, #064e3b 0%, #059669 50%, #34d399 100%);
             font-family: 'Arial', 'Segoe UI', sans-serif;
             min-height: 100vh;
             padding: 20px;
@@ -36,7 +36,7 @@
         }
         h1 {
             font-size: 2.2rem;
-            background: linear-gradient(120deg, #b45309, #d97706);
+            background: linear-gradient(120deg, #065f46, #059669);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -44,9 +44,9 @@
         }
         .watermark {
             font-size: 0.9rem;
-            color: #d97706;
+            color: #065f46;
             font-weight: bold;
-            background: #fef3c7;
+            background: #d1fae5;
             display: inline-block;
             padding: 4px 18px;
             border-radius: 40px;
@@ -59,11 +59,11 @@
             gap: 20px;
             justify-content: center;
             margin-bottom: 25px;
-            border-bottom: 3px solid #ffd966;
+            border-bottom: 3px solid #6ee7b7;
             padding-bottom: 8px;
         }
         .tab-btn {
-            background: #ffe8cc;
+            background: #d1fae5;
             border: none;
             font-size: 1.3rem;
             font-weight: bold;
@@ -71,14 +71,14 @@
             border-radius: 60px;
             cursor: pointer;
             transition: 0.2s;
-            color: #5e3a1c;
+            color: #064e3b;
             font-family: 'Arial', sans-serif;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
         .tab-btn.active {
-            background: #f59e0b;
+            background: #059669;
             color: white;
-            box-shadow: 0 6px 12px rgba(245,158,11,0.3);
+            box-shadow: 0 6px 12px rgba(5,150,105,0.3);
         }
         .tab-content {
             display: none;
@@ -92,7 +92,6 @@
             to { opacity: 1; transform: translateY(0);}
         }
 
-        /* FLASHCARD */
         .flashcard-area {
             display: flex;
             flex-direction: column;
@@ -109,14 +108,14 @@
             margin: 20px auto;
             cursor: pointer;
             transition: 0.2s;
-            border: 3px solid #fcd34d;
+            border: 3px solid #6ee7b7;
         }
-        .card:hover { transform: scale(1.02); background: #fff5e6; }
+        .card:hover { transform: scale(1.02); background: #f0fdf4; }
         .card-hanzi {
             font-family: 'Simsun', '宋体', 'Times New Roman', serif;
             font-size: 5rem;
             font-weight: 800;
-            color: #b45309;
+            color: #065f46;
             letter-spacing: 4px;
             margin-bottom: 20px;
             word-break: break-word;
@@ -131,11 +130,11 @@
         .card-arti {
             font-family: 'Arial', sans-serif;
             font-size: 1.5rem;
-            background: #eef2ff;
+            background: #d1fae5;
             display: inline-block;
             padding: 8px 22px;
             border-radius: 50px;
-            color: #1e293b;
+            color: #064e3b;
         }
         .info-text {
             font-family: 'Arial', sans-serif;
@@ -151,7 +150,7 @@
             margin: 15px 0;
         }
         button {
-            background: #ffb347;
+            background: #34d399;
             border: none;
             padding: 10px 22px;
             font-size: 1.1rem;
@@ -161,11 +160,11 @@
             font-family: 'Arial', sans-serif;
             transition: 0.1s;
             color: white;
-            box-shadow: 0 4px 0 #c47d2e;
+            box-shadow: 0 4px 0 #047857;
         }
         button:active {
             transform: translateY(2px);
-            box-shadow: 0 1px 0 #c47d2e;
+            box-shadow: 0 1px 0 #047857;
         }
         .shuffle-btn { background: #3b82f6; box-shadow: 0 4px 0 #1e40af; }
         .checklist-btn { background: #10b981; box-shadow: 0 4px 0 #047857; }
@@ -177,12 +176,13 @@
             flex-wrap: wrap;
         }
         .mark-info {
-            background: #fde68a;
+            background: #a7f3d0;
             padding: 6px 18px;
             border-radius: 40px;
             font-family: 'Arial', sans-serif;
             font-weight: bold;
             font-size: 0.9rem;
+            color: #064e3b;
         }
         .counter {
             font-family: 'Arial', sans-serif;
@@ -193,10 +193,9 @@
             display: inline-block;
         }
 
-        /* KUIS */
         .quiz-area { text-align: center; }
         .timer-bar {
-            background: #fef9e3;
+            background: #ecfdf5;
             padding: 10px 20px;
             border-radius: 60px;
             display: flex;
@@ -206,33 +205,33 @@
             flex-wrap: wrap;
             margin-bottom: 20px;
         }
-        .timer-label { font-weight: bold; background: #facc15; padding: 5px 15px; border-radius: 40px; }
+        .timer-label { font-weight: bold; background: #6ee7b7; padding: 5px 15px; border-radius: 40px; color: #064e3b; }
         .progress-container { flex: 2; background-color: #e2e8f0; border-radius: 30px; height: 18px; overflow: hidden; }
         .time-progress { width: 100%; height: 100%; background: linear-gradient(90deg, #10b981, #34d399); border-radius: 30px; transition: width 0.1s linear; }
         .time-warning { background: linear-gradient(90deg, #ef4444, #f97316); }
         .timer-digit { font-family: monospace; font-size: 1.6rem; font-weight: 800; background: #0f172a; color: #fef9c3; padding: 4px 18px; border-radius: 50px; min-width: 100px; }
-        .quiz-question { background: #fffbeb; border-radius: 70px; padding: 25px; margin: 15px 0; box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
-        .quiz-arti { font-family: 'Arial', sans-serif; font-size: 2rem; font-weight: bold; color: #7b341e; background: #fed7aa; display: inline-block; padding: 10px 30px; border-radius: 60px; }
+        .quiz-question { background: #ecfdf5; border-radius: 70px; padding: 25px; margin: 15px 0; box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+        .quiz-arti { font-family: 'Arial', sans-serif; font-size: 2rem; font-weight: bold; color: #064e3b; background: #a7f3d0; display: inline-block; padding: 10px 30px; border-radius: 60px; }
         .options-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; margin: 25px 0; }
         .quiz-option {
             font-family: 'Simsun', '宋体', serif;
             font-size: 1.5rem;
             font-weight: bold;
-            background: linear-gradient(145deg, #fef9e3, #fff2df);
-            border: 3px solid #fbbf24;
+            background: linear-gradient(145deg, #ecfdf5, #d1fae5);
+            border: 3px solid #34d399;
             border-radius: 70px;
             padding: 14px 8px;
             cursor: pointer;
             transition: 0.1s;
             text-align: center;
-            color: #3b2b1f;
-            box-shadow: 0 5px 0 #eab308;
+            color: #064e3b;
+            box-shadow: 0 5px 0 #059669;
         }
-        .quiz-option:hover:not(:disabled) { transform: translateY(-2px); background: #fff0cc; }
-        .quiz-option:active:not(:disabled) { transform: translateY(2px); box-shadow: 0 2px 0 #eab308; }
+        .quiz-option:hover:not(:disabled) { transform: translateY(-2px); background: #a7f3d0; }
+        .quiz-option:active:not(:disabled) { transform: translateY(2px); box-shadow: 0 2px 0 #059669; }
         .disabled-opt { opacity: 0.6; cursor: not-allowed; }
         .feedback { font-family: 'Arial', sans-serif; font-size: 1.2rem; padding: 12px; border-radius: 50px; margin: 15px 0; background: #f1f5f9; font-weight: bold; }
-        .score-area { font-family: 'Arial', sans-serif; font-size: 1.2rem; background: #facc15; display: inline-block; padding: 6px 22px; border-radius: 40px; margin-bottom: 12px; }
+        .score-area { font-family: 'Arial', sans-serif; font-size: 1.2rem; background: #6ee7b7; display: inline-block; padding: 6px 22px; border-radius: 40px; margin-bottom: 12px; color: #064e3b; }
         .quiz-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
         .next-quiz { background: #10b981; box-shadow: 0 4px 0 #047857; }
         .reset-quiz { background: #ef4444; box-shadow: 0 4px 0 #b91c1c; }
@@ -250,8 +249,8 @@
 <body>
 <div class="app-container">
     <div class="title-section">
-        <h1>📚 HSK 2 Bab 7 – 他篮球打得很好</h1>
-        <div class="watermark">lcn palembang-08994477998</div>
+        <h1>🏀 HSK 2 Bab 07 – 他篮球打得很好</h1>
+        <div class="watermark">Berdasarkan TB & WB Lesson 07 | Flashcard + Kuis</div>
     </div>
 
     <div class="tabs">
@@ -259,7 +258,7 @@
         <button class="tab-btn" data-tab="quiz">🎯 KUIS HANZI 🎯</button>
     </div>
 
-    <!-- FLASHCARD TAB -->
+    <!-- FLASHCARD -->
     <div id="flashcardTab" class="tab-content active">
         <div class="flashcard-area">
             <div class="card" id="flashcardCard">
@@ -278,15 +277,15 @@
             </div>
             <div class="review-badge">
                 <span class="mark-info" id="markedCountBadge">📌 Tertandai: 0</span>
-                <span class="counter" id="flashCounter">Kartu 1 / 120</span>
+                <span class="counter" id="flashCounter">Kartu 1 / 60</span>
             </div>
         </div>
     </div>
 
-    <!-- KUIS TAB -->
+    <!-- KUIS -->
     <div id="quizTab" class="tab-content">
         <div class="quiz-area">
-            <div class="score-area">🏆 SKOR: <span id="quizScore">0</span> / <span id="totalQuizCount">120</span></div>
+            <div class="score-area">🏆 SKOR: <span id="quizScore">0</span> / <span id="totalQuizCount">60</span></div>
             <div class="timer-bar">
                 <span class="timer-label">⏱ WAKTU</span>
                 <div class="progress-container">
@@ -310,130 +309,94 @@
 </div>
 
 <script>
-    // ======================= DATA KOSAKATA (120 item dari file) =======================
+    // ======================= KOSAKATA BAB 07 =======================
+    // Diambil dari file KOSAKATA HSK2 BAB 7.txt, hanya entri dengan aksara Han
     const vocabulary = [
-        { hanzi: "从", pinyin: "cóng", arti: "dari" },
-        { hanzi: "往", pinyin: "wǎng", arti: "menuju; ke arah" },
-        { hanzi: "跑", pinyin: "pǎo", arti: "berlari; pergi (cepat)" },
-        { hanzi: "打篮球", pinyin: "dǎ lánqiú", arti: "bermain basket" },
-        { hanzi: "篮球", pinyin: "lánqiú", arti: "bola basket" },
-        { hanzi: "一下课", pinyin: "yī xià kè", arti: "begitu kelas selesai" },
-        { hanzi: "往外跑", pinyin: "wǎng wài pǎo", arti: "berlari ke luar" },
-        { hanzi: "说好", pinyin: "shuō hǎo", arti: "membuat janji; setuju" },
-        { hanzi: "一起", pinyin: "yīqǐ", arti: "bersama-sama" },
-        { hanzi: "玩", pinyin: "wán", arti: "bermain" },
-        { hanzi: "回来", pinyin: "huílai", arti: "kembali (ke sini)" },
-        { hanzi: "从……回来", pinyin: "cóng...huílai", arti: "kembali dari..." },
-        { hanzi: "昨天下午", pinyin: "zuótiān xiàwǔ", arti: "kemarin sore" },
-        { hanzi: "运动", pinyin: "yùndòng", arti: "olahraga; berolahraga" },
-        { hanzi: "踢足球", pinyin: "tī zúqiú", arti: "bermain sepak bola" },
-        { hanzi: "踢", pinyin: "tī", arti: "menendang; bermain (sepak bola)" },
-        { hanzi: "足球", pinyin: "zúqiú", arti: "sepak bola; bola kaki" },
-        { hanzi: "得", pinyin: "de", arti: "partikel penghubung (untuk keterangan cara)" },
-        { hanzi: "打得好", pinyin: "dǎ de hǎo", arti: "bermain dengan baik" },
-        { hanzi: "踢得怎么样", pinyin: "tī de zěnmeyàng", arti: "bermain bagus tidak?" },
-        { hanzi: "还可以", pinyin: "hái kěyǐ", arti: "lumayan; masih bisa diterima" },
-        { hanzi: "跑步", pinyin: "pǎobù", arti: "lari" },
-        { hanzi: "跑得快", pinyin: "pǎo de kuài", arti: "berlari cepat" },
-        { hanzi: "跑得不快", pinyin: "pǎo de bù kuài", arti: "berlari tidak cepat" },
-        { hanzi: "游泳", pinyin: "yóuyǒng", arti: "berenang" },
-        { hanzi: "游得快", pinyin: "yóu de kuài", arti: "berenang cepat" },
-        { hanzi: "爱好", pinyin: "àihào", arti: "hobi; kegemaran" },
-        { hanzi: "开始", pinyin: "kāishǐ", arti: "mulai" },
-        { hanzi: "从上小学开始", pinyin: "cóng shàng xiǎoxué kāishǐ", arti: "mulai dari SD" },
-        { hanzi: "有时间", pinyin: "yǒu shíjiān", arti: "ada waktu" },
-        { hanzi: "一有时间就", pinyin: "yī yǒu shíjiān jiù", arti: "begitu ada waktu langsung" },
+        // Kata Benda
+        { hanzi: "篮球", pinyin: "lánqiú", arti: "bola basket / olahraga basket" },
+        { hanzi: "足球", pinyin: "zúqiú", arti: "sepak bola / olahraga sepak bola" },
+        { hanzi: "运动", pinyin: "yùndòng", arti: "olahraga / gerakan" },
+        { hanzi: "爱好", pinyin: "àihào", arti: "hobi / kesukaan" },
+        { hanzi: "开始", pinyin: "kāishǐ", arti: "awal / permulaan" },
+        { hanzi: "朋友", pinyin: "péngyou", arti: "teman" },
+        { hanzi: "同学", pinyin: "tóngxué", arti: "teman sekelas" },
+        { hanzi: "教室", pinyin: "jiàoshì", arti: "ruang kelas" },
+        { hanzi: "学校", pinyin: "xuéxiào", arti: "sekolah" },
+        { hanzi: "时间", pinyin: "shíjiān", arti: "waktu" },
+        { hanzi: "北京", pinyin: "Běijīng", arti: "Beijing (kota)" },
+        { hanzi: "下午", pinyin: "xiàwǔ", arti: "sore" },
+        { hanzi: "家", pinyin: "jiā", arti: "rumah / keluarga" },
+        { hanzi: "鱼", pinyin: "yú", arti: "ikan" },
+        { hanzi: "肉", pinyin: "ròu", arti: "daging" },
+        { hanzi: "鱼肉", pinyin: "yúròu", arti: "daging ikan" },
         { hanzi: "运动服", pinyin: "yùndòngfú", arti: "pakaian olahraga" },
         { hanzi: "画师", pinyin: "huàshī", arti: "pelukis (profesional)" },
-        { hanzi: "鱼肉", pinyin: "yúròu", arti: "daging ikan (juga berarti 'memeras')" },
-        { hanzi: "衣服", pinyin: "yīfu", arti: "pakaian" },
-        { hanzi: "老师", pinyin: "lǎoshī", arti: "guru" },
-        { hanzi: "字", pinyin: "zì", arti: "tulisan; karakter" },
-        { hanzi: "写字", pinyin: "xiě zì", arti: "menulis karakter" },
-        { hanzi: "写得好", pinyin: "xiě de hǎo", arti: "menulis dengan bagus" },
-        { hanzi: "唱歌", pinyin: "chànggē", arti: "bernyanyi" },
-        { hanzi: "唱得好听", pinyin: "chàng de hǎotīng", arti: "bernyanyi dengan merdu" },
-        { hanzi: "开心", pinyin: "kāixīn", arti: "senang" },
-        { hanzi: "高兴", pinyin: "gāoxìng", arti: "gembira" },
-        { hanzi: "玩得高兴", pinyin: "wán de gāoxìng", arti: "bermain dengan gembira" },
-        { hanzi: "来得早", pinyin: "lái de zǎo", arti: "datang lebih awal" },
-        { hanzi: "睡得好", pinyin: "shuì de hǎo", arti: "tidur nyenyak" },
-        { hanzi: "游泳游得不快", pinyin: "yóuyǒng yóu de bù kuài", arti: "berenang tidak cepat" },
-        { hanzi: "汉字写得好", pinyin: "Hànzì xiě de hǎo", arti: "menulis hanzi dengan baik" },
-        { hanzi: "中文说得好", pinyin: "Zhōngwén shuō de hǎo", arti: "berbicara bahasa Mandarin dengan baik" },
-        { hanzi: "不会", pinyin: "bù huì", arti: "tidak bisa; tidak akan" },
-        { hanzi: "会不会", pinyin: "huì bu huì", arti: "bisa atau tidak?" },
-        { hanzi: "快不快", pinyin: "kuài bu kuài", arti: "cepat atau tidak?" },
-        { hanzi: "早不早", pinyin: "zǎo bu zǎo", arti: "cepat (pagi) atau tidak?" },
-        { hanzi: "怎么样", pinyin: "zěnmeyàng", arti: "bagaimana" },
-        { hanzi: "踢得不错", pinyin: "tī de bùcuò", arti: "bermain lumayan bagus" },
-        { hanzi: "打得很好", pinyin: "dǎ de hěn hǎo", arti: "bermain sangat baik" },
-        { hanzi: "跑得很快", pinyin: "pǎo de hěn kuài", arti: "berlari sangat cepat" },
-        { hanzi: "玩得开心", pinyin: "wán de kāixīn", arti: "bermain dengan senang" },
-        { hanzi: "一……就……", pinyin: "yī...jiù...", arti: "begitu...langsung..." },
-        { hanzi: "一下课就", pinyin: "yī xià kè jiù", arti: "begitu kelas selesai langsung" },
-        { hanzi: "一到星期天", pinyin: "yī dào xīngqītiān", arti: "begitu hari Minggu tiba" },
-        { hanzi: "一回家", pinyin: "yī huíjiā", arti: "begitu sampai rumah" },
-        { hanzi: "一打电话", pinyin: "yī dǎ diànhuà", arti: "begitu menelepon" },
-        { hanzi: "一看", pinyin: "yī kàn", arti: "begitu melihat" },
-        { hanzi: "一吃", pinyin: "yī chī", arti: "begitu makan" },
-        { hanzi: "一睡", pinyin: "yī shuì", arti: "begitu tidur" },
-        { hanzi: "足球场", pinyin: "zúqiú chǎng", arti: "lapangan sepak bola" },
-        { hanzi: "篮球场", pinyin: "lánqiú chǎng", arti: "lapangan basket" },
-        { hanzi: "游泳池", pinyin: "yóuyǒng chí", arti: "kolam renang" },
-        { hanzi: "体育", pinyin: "tǐyù", arti: "olahraga (pendidikan jasmani)" },
-        { hanzi: "比赛", pinyin: "bǐsài", arti: "pertandingan" },
-        { hanzi: "赢", pinyin: "yíng", arti: "menang" },
-        { hanzi: "输", pinyin: "shū", arti: "kalah" },
-        { hanzi: "锻炼", pinyin: "duànliàn", arti: "berlatih; berolahraga" },
-        { hanzi: "身体", pinyin: "shēntǐ", arti: "tubuh; badan" },
-        { hanzi: "健康", pinyin: "jiànkāng", arti: "sehat" },
-        { hanzi: "出汗", pinyin: "chū hàn", arti: "berkeringat" },
-        { hanzi: "加油", pinyin: "jiāyóu", arti: "semangat! (memberi dukungan)" },
-        { hanzi: "每天", pinyin: "měitiān", arti: "setiap hari" },
-        { hanzi: "星期天", pinyin: "xīngqītiān", arti: "hari Minggu" },
-        { hanzi: "周末", pinyin: "zhōumò", arti: "akhir pekan" },
-        { hanzi: "有空", pinyin: "yǒu kòng", arti: "ada waktu luang" },
-        { hanzi: "有空的时候", pinyin: "yǒu kòng de shíhou", arti: "saat ada waktu luang" },
-        { hanzi: "放学后", pinyin: "fàngxué hòu", arti: "setelah pulang sekolah" },
-        { hanzi: "下班后", pinyin: "xiàbān hòu", arti: "setelah pulang kerja" },
-        { hanzi: "约朋友", pinyin: "yuē péngyou", arti: "janjian dengan teman" },
-        { hanzi: "组队", pinyin: "zǔ duì", arti: "membuat tim" },
-        { hanzi: "训练", pinyin: "xùnliàn", arti: "latihan" },
-        { hanzi: "喝水", pinyin: "hē shuǐ", arti: "minum air" },
-        { hanzi: "休息", pinyin: "xiūxi", arti: "istirahat" },
-        { hanzi: "累", pinyin: "lèi", arti: "lelah" },
-        { hanzi: "有趣", pinyin: "yǒuqù", arti: "menarik; menyenangkan" },
-        { hanzi: "喜欢", pinyin: "xǐhuān", arti: "suka" },
-        { hanzi: "最爱", pinyin: "zuì ài", arti: "paling suka" },
-        { hanzi: "爱好运动", pinyin: "àihào yùndòng", arti: "hobi olahraga" },
-        { hanzi: "运动场", pinyin: "yùndòng chǎng", arti: "lapangan olahraga" },
-        { hanzi: "体育馆", pinyin: "tǐyùguǎn", arti: "gedung olahraga" },
-        { hanzi: "健身房", pinyin: "jiànshēnfáng", arti: "pusat kebugaran" },
-        { hanzi: "跑步机", pinyin: "pǎobùjī", arti: "treadmill" },
-        { hanzi: "仰卧起坐", pinyin: "yǎngwò qǐzuò", arti: "sit-up" },
-        { hanzi: "俯卧撑", pinyin: "fǔwòchēng", arti: "push-up" },
-        { hanzi: "跳绳", pinyin: "tiàoshéng", arti: "lompat tali" },
-        { hanzi: "打乒乓球", pinyin: "dǎ pīngpāngqiú", arti: "main pingpong" },
-        { hanzi: "打网球", pinyin: "dǎ wǎngqiú", arti: "main tenis" },
-        { hanzi: "打排球", pinyin: "dǎ páiqiú", arti: "main voli" },
-        { hanzi: "打羽毛球", pinyin: "dǎ yǔmáoqiú", arti: "main bulu tangkis" },
-        { hanzi: "滑雪", pinyin: "huáxuě", arti: "bermain ski" },
-        { hanzi: "滑冰", pinyin: "huábīng", arti: "seluncur es" },
-        { hanzi: "冲浪", pinyin: "chōnglàng", arti: "berselancar" },
-        { hanzi: "爬山", pinyin: "páshān", arti: "mendaki gunung" },
-        { hanzi: "远足", pinyin: "yuǎnzú", arti: "jalan-jalan jauh; hiking" },
-        { hanzi: "自行车", pinyin: "zìxíngchē", arti: "sepeda" },
-        { hanzi: "骑车", pinyin: "qí chē", arti: "bersepeda" },
-        { hanzi: "冠军", pinyin: "guànjūn", arti: "juara" },
-        { hanzi: "亚军", pinyin: "yàjūn", arti: "runner-up" },
-        { hanzi: "季军", pinyin: "jìjūn", arti: "peringkat ketiga" },
-        { hanzi: "记录", pinyin: "jìlù", arti: "rekor" },
-        { hanzi: "打破记录", pinyin: "dǎpò jìlù", arti: "memecahkan rekor" }
+        { hanzi: "场", pinyin: "chǎng", arti: "lapangan / tempat" },
+        { hanzi: "球", pinyin: "qiú", arti: "bola" },
+        // Kata Kerja
+        { hanzi: "打 (篮球)", pinyin: "dǎ (lánqiú)", arti: "bermain (basket) / memukul" },
+        { hanzi: "踢 (足球)", pinyin: "tī (zúqiú)", arti: "menendang / bermain (sepak bola)" },
+        { hanzi: "跑", pinyin: "pǎo", arti: "berlari" },
+        { hanzi: "跑步", pinyin: "pǎobù", arti: "berlari / joging" },
+        { hanzi: "游泳", pinyin: "yóuyǒng", arti: "berenang" },
+        { hanzi: "开始", pinyin: "kāishǐ", arti: "memulai" },
+        { hanzi: "往 (前走)", pinyin: "wǎng (qián zǒu)", arti: "menuju / ke arah" },
+        { hanzi: "从 (北京回来)", pinyin: "cóng (Běijīng huílái)", arti: "dari (kembali dari Beijing)" },
+        { hanzi: "玩", pinyin: "wán", arti: "bermain" },
+        { hanzi: "说好", pinyin: "shuō hǎo", arti: "membuat janji / menyetujui" },
+        { hanzi: "回来", pinyin: "huílái", arti: "kembali (ke sini)" },
+        { hanzi: "出去", pinyin: "chūqù", arti: "keluar (ke sana)" },
+        { hanzi: "写", pinyin: "xiě", arti: "menulis" },
+        { hanzi: "画画", pinyin: "huà huà", arti: "menggambar" },
+        { hanzi: "唱歌", pinyin: "chànggē", arti: "menyanyi" },
+        { hanzi: "做饭", pinyin: "zuò fàn", arti: "memasak" },
+        // Kata Sifat & Adverbia
+        { hanzi: "好", pinyin: "hǎo", arti: "baik / bagus" },
+        { hanzi: "快", pinyin: "kuài", arti: "cepat" },
+        { hanzi: "慢", pinyin: "màn", arti: "lambat" },
+        { hanzi: "高兴", pinyin: "gāoxìng", arti: "senang / gembira" },
+        { hanzi: "漂亮", pinyin: "piàoliang", arti: "cantik / bagus" },
+        { hanzi: "不错 / 还可以", pinyin: "búcuò / hái kěyǐ", arti: "lumayan / tidak buruk" },
+        { hanzi: "不太", pinyin: "bú tài", arti: "tidak terlalu" },
+        // Preposisi & Konjungsi
+        { hanzi: "从", pinyin: "cóng", arti: "dari" },
+        { hanzi: "往", pinyin: "wǎng", arti: "menuju / ke arah" },
+        { hanzi: "就", pinyin: "jiù", arti: "langsung / maka" },
+        { hanzi: "还", pinyin: "hái", arti: "masih / juga" },
+        { hanzi: "也", pinyin: "yě", arti: "juga" },
+        { hanzi: "都", pinyin: "dōu", arti: "semuanya" },
+        { hanzi: "很", pinyin: "hěn", arti: "sangat" },
+        { hanzi: "太", pinyin: "tài", arti: "terlalu" },
+        { hanzi: "一", pinyin: "yī", arti: "begitu (syarat)" },
+        // Kata Tanya
+        { hanzi: "什么", pinyin: "shénme", arti: "apa" },
+        { hanzi: "哪儿", pinyin: "nǎr", arti: "di mana" },
+        { hanzi: "哪里", pinyin: "nǎlǐ", arti: "di mana" },
+        { hanzi: "谁", pinyin: "shéi", arti: "siapa" },
+        { hanzi: "怎么", pinyin: "zěnme", arti: "bagaimana (cara)" },
+        { hanzi: "怎么样", pinyin: "zěnmeyàng", arti: "bagaimana (keadaan)" },
+        { hanzi: "多少", pinyin: "duōshao", arti: "berapa (jumlah)" },
+        { hanzi: "几", pinyin: "jǐ", arti: "berapa (angka kecil)" },
+        // Frasa & Contoh Kalimat
+        { hanzi: "从北京回来", pinyin: "cóng Běijīng huílái", arti: "Kembali dari Beijing." },
+        { hanzi: "你怎么一下课就往外跑？", pinyin: "nǐ zěnme yī xiàkè jiù wǎng wài pǎo?", arti: "Kenapa kamu begitu selesai kelas langsung lari ke luar?" },
+        { hanzi: "我跟同学说好了", pinyin: "wǒ gēn tóngxué shuō hǎo le", arti: "Saya sudah janjian dengan teman sekelas." },
+        { hanzi: "一起去打篮球", pinyin: "yīqǐ qù dǎ lánqiú", arti: "Pergi main basket bersama-sama." },
+        { hanzi: "你还有什么爱好？", pinyin: "nǐ hái yǒu shénme àihào?", arti: "Kamu masih punya hobi apa lagi?" },
+        { hanzi: "我喜欢踢足球", pinyin: "wǒ xǐhuān tī zúqiú", arti: "Saya suka main sepak bola." },
+        { hanzi: "一到星期天就去踢球", pinyin: "yī dào xīngqītiān jiù qù tī qiú", arti: "Begitu hari Minggu tiba, langsung pergi main bola." },
+        { hanzi: "你踢得怎么样？", pinyin: "nǐ tī de zěnmeyàng?", arti: "Kamu main (bola)-nya bagaimana?" },
+        { hanzi: "打得还可以", pinyin: "dǎ de hái kěyǐ", arti: "Lumayan (hasil main basketnya)" },
+        { hanzi: "我跑得不快", pinyin: "wǒ pǎo de bù kuài", arti: "Saya lari tidak cepat." },
+        { hanzi: "我游泳游得不快", pinyin: "wǒ yóuyǒng yóu de bù kuài", arti: "Saya berenang tidak cepat." },
+        { hanzi: "从小学开始", pinyin: "cóng xiǎoxué kāishǐ", arti: "Mulai dari SD." },
+        { hanzi: "我一有时间就去运动", pinyin: "wǒ yī yǒu shíjiān jiù qù yùndòng", arti: "Begitu ada waktu, langsung pergi olahraga." },
+        { hanzi: "他字写得很漂亮", pinyin: "tā zì xiě de hěn piàoliang", arti: "Tulisannya sangat bagus." },
+        { hanzi: "孩子们玩得很高兴", pinyin: "háizimen wán de hěn gāoxìng", arti: "Anak-anak bermain dengan sangat gembira." }
     ];
     const TOTAL_VOCAB = vocabulary.length;
 
-    // ========== FLASHCARD DENGAN CHECKLIST ==========
+    // ========== FLASHCARD ==========
     let currentDisplayList = [...vocabulary];
     let currentFlashIndex = 0;
     let isFlipped = false;
@@ -475,7 +438,7 @@
     function showAllFlash() { currentDisplayList = [...vocabulary]; currentFlashIndex=0; isFlipped=false; renderFlashcard(); }
     function shuffleFlash() { currentDisplayList = shuffleArray([...currentDisplayList]); currentFlashIndex=0; isFlipped=false; renderFlashcard(); }
 
-    // ========== KUIS DENGAN TIMER, SUARA, ULANG SALAH ==========
+    // ========== KUIS ==========
     let audioCtx = null;
     function initAudio() { if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)(); return audioCtx; }
     function playTone(freq, dur, vol=0.2) { let ctx=initAudio(); if(ctx.state==='suspended') ctx.resume().then(()=>_play(ctx,freq,dur,vol)).catch(e=>{}); else _play(ctx,freq,dur,vol); }
